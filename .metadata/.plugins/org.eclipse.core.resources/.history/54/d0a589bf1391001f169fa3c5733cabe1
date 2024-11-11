@@ -1,0 +1,24 @@
+package interviewquestions;
+
+public class check {
+	
+	public static void main(String[] args)
+	{
+		int[] num = {1,3,4,5};
+		int sum =0;
+		int sum1 =0;
+		int len = num.length;
+		for(int i=0;i<len;i++)
+		{
+			sum = sum+num[i];
+		}
+		for(int j =1;j<=len+1;j++) {
+			sum1 = sum1+num[j];
+		}
+		System.out.println(sum1-sum);
+		
+		
+	}
+
+	
+}

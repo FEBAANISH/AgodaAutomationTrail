@@ -1,0 +1,15 @@
+package interviewPrepartion;
+
+public class Wordoccurencerate {
+
+	public static void main(String[] args) {
+		String word ="hai hello java,java is simple";
+		String[] split = word.split(" ");
+		for(String e:split)
+		{
+			System.out.println(e);
+		}
+
+	}
+
+}

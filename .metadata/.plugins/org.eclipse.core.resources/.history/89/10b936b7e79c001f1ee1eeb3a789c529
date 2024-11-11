@@ -1,0 +1,20 @@
+package ExtendedReport;
+
+import java.lang.module.ModuleDescriptor.Exports;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+public class extendTestReport {
+	
+	public static ExtentSparkReporter sparkreport;
+	public static ExtentTest test;
+	public static Exports report;
+	
+	
+	public void initializeReport()
+	{
+		 sparkreport = new ExtentSparkReporter(System.getProperty("user.dir") + "\\src\\main\\resources\\Report\\SparkReport.html");
+	}
+
+}

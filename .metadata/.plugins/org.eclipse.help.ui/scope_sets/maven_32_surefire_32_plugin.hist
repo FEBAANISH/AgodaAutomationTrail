@@ -1,0 +1,4 @@
+#Tue Nov 05 15:11:11 IST 2024
+__DEFAULT__=false
+expression=maven surefire plugin
+org.eclipse.help.ui.localSearch.master=true

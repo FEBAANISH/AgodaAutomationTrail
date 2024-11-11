@@ -1,0 +1,24 @@
+package studiedProject;
+
+
+
+public class check {
+	
+	public static int factorial(int num) 
+	{
+		int fact =1;
+		
+		if(num==0)
+			return 1;
+		else {
+			fact = num*factorial(num-1);
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		System.out.println(factorial(5));
+	}
+
+	
+}

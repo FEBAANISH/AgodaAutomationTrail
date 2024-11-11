@@ -1,0 +1,16 @@
+package interviewquestions;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class check {
+	
+	public static void main(String[] args)
+	{
+		String s1 ="!!@!#@#@$#@$@#$#$#$#@$JAVA!#@#$@#$123456";
+		s1 = s1.replace("[^a-zA-Z0-9]", "");
+		System.out.println(s1);
+	}
+
+	
+}

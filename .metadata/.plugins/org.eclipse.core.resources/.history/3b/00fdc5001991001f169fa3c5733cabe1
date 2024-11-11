@@ -1,0 +1,24 @@
+package interviewquestions;
+
+public class MissingNumber {
+
+	public static void main(String[] args) {
+		int[] a = {1,3,4,5};
+		int sum = 0;
+		int len = a.length;
+		System.out.println(len);
+		for (int i=0;i<len;i++)
+		{
+			sum = sum+a[i];
+		}
+		System.out.println(sum);
+		int sum1 = 0;
+		for (int j =1;j<=len+1;j++)
+		{
+			 sum1 = sum1 +j;
+		}
+		System.out.println(sum1);
+		System.out.println(sum1-sum);
+	}
+
+}

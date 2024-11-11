@@ -1,0 +1,50 @@
+package TestPackage;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import Listerners.RetryAnalyzer;
+import Pages.CreateAccountPage;
+
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+
+public class createAccountTest extends BaseTest {
+	
+
+
+	private CreateAccountPage createAccountPage;
+
+	@BeforeMethod
+	public void NavigateToCreateAccountPage() {
+		
+		createAccountPage = bp.getInstance(CreateAccountPage.class);
+		createAccountPage.waitForCreateButton();
+		createAccountPage.create_Account_Button_Click();
+		//su = new Screenshot_Util(driver);
+
+	}
+
+	@Test(retryAnalyzer = RetryAnalyzer.class)
+	public void SwitchToFrame() {
+		
+		createAccountPage = bp.getInstance(CreateAccountPage.class);
+		createAccountPage.waitForFrame();
+		String assertFrameTitle = createAccountPage.validateFrameTitle();
+		try {
+			log.info("verifying Title");
+			Assert.assertEquals(assertFrameTitle, "Sign up", "Frame title does not match!");
+			
+		} catch (AssertionError e) {
+			
+			throw e;
+		}
+
+	}
+
+}

@@ -1,0 +1,15 @@
+package test;
+
+public class Stringswapwithouttemp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String a ="hello";
+		String b ="world";
+		a = a+b;
+		System.out.println(a);
+		//b = length()-b.length();
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package interviewquestions;
+
+public class ReverseintegerUsingStringBuffer {
+
+	public static void main(String[] args) {
+		int num =12345;
+		System.out.println(new StringBuffer(String.valueOf(num)).reverse());
+
+	}
+
+}

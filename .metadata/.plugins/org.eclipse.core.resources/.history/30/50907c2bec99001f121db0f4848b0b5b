@@ -1,0 +1,22 @@
+package interviewPrepartion;
+
+public class Wordoccurencerate {
+
+	public static void main(String[] args) {
+		String word = "hello hai hai";
+		String[] split = word.split(" ");
+		String target = "hai";
+		int count = 0;
+
+		for (String e : split) {
+
+			if (e.equalsIgnoreCase(target)) {
+
+				count++;
+			}
+		}
+
+		System.out.println(target + ":" + count);
+	}
+
+}

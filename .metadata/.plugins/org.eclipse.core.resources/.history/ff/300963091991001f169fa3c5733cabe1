@@ -1,0 +1,21 @@
+package interviewquestions;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class StringDuplicate {
+
+	public static void main(String[] args) {
+		String[] name = {"java","python","c#","c","c++","java"};
+		Set<String>store = new HashSet<String>();
+		for(String dup:name)
+		{
+			if(store.add(dup)==false)
+			{
+		System.out.println(dup);
+			
+		}
+
+	}
+}
+}

@@ -1,0 +1,14 @@
+package interviewquestions;
+
+public class PrintHelloworldwithoutsemicolon {
+
+	public static void main(String[] args) {
+		if (System.out.printf("hello world") == null) {
+
+		}
+		if (System.out.append("hello world") == null) {
+
+		}
+	}
+
+}

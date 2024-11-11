@@ -1,0 +1,121 @@
+package Pages;
+
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import BasePackage.BasePage;
+
+import io.qameta.allure.Step;
+
+public class CreateAccountPage extends BasePage {
+	
+	private Logger log;
+
+	public CreateAccountPage(WebDriver driver,Logger log) {
+		super(driver);
+		this.log = log;
+
+	}
+
+	private By create_acc_button = By.xpath("//button[@data-element-name=\"sign-up-button\"]");
+	private By SignUpFrame = By.xpath("//iframe[@title='Universal login']");
+	private By FrameTitleValidation = By.xpath("//div[@data-cy='form-heading']/h2");
+	private By emailTextField = By.xpath("//input[@data-cy='unified-email-input']");
+	// private By SignupTitle =
+	// By.xpath("/html/body/div[@id='root']/div/div/div/h3");
+
+	public WebElement getCreate_acc_button() {
+		return driver.findElement(create_acc_button);
+	}
+
+	public WebElement getSignUpFrame() {
+		return driver.findElement(SignUpFrame);
+	}
+
+	public WebElement getFrameTitleValidation() {
+		return driver.findElement(FrameTitleValidation);
+	}
+
+	public void waitForCreateButton() {
+		waitForElementPresent(create_acc_button);
+		System.out.println("present");
+
+	}
+
+	public void create_Account_Button_Click() {
+		getCreate_acc_button().click();
+	}
+
+	public void waitForFrame() {
+		waitForvisibilityOfElementLocated(SignUpFrame);
+
+	}
+
+	public void waitForTitle() {
+		waitForvisibilityOfElementLocated(FrameTitleValidation);
+
+	}
+
+	public WebElement getFrameTitle() {
+		return driver.findElement(FrameTitleValidation);
+	}
+	
+	/*public WebElement getEmailTextField() {
+		return driver.findElement(emailTextField);
+	}*/
+	
+	public void waitForEmailTextField()
+	{
+		waitForvisibilityOfElementLocated(emailTextField);
+	}
+
+	public boolean switchedToFrame() {
+		try {
+
+			System.out.println("inside");
+
+			driver.switchTo().frame(driver.findElement(SignUpFrame));
+			return true; // Successfully switched to the frame
+		} catch (NoSuchElementException e) {
+			System.out.println("The specified iframe was not found: " + e.getMessage());
+			return false; // Switching failed
+		}
+	}
+
+	public String ValidatingFrameTitle() {
+
+		if (switchedToFrame()) {
+			waitForTitle();
+
+			return getFrameTitle().getText();
+
+		} else {
+			System.out.println("Failed to switch to the signup iframe.");
+			return null;
+		}
+
+	}
+
+	
+
+	
+	public String validateFrameTitle() {
+
+		String frameTitle = ValidatingFrameTitle();
+		System.out.println("Frame Title: " + frameTitle);
+		return frameTitle;
+
+	}
+	
+	public UserRegistrationPage getEmailField()
+	{
+		//getEmailTextField();
+		waitForEmailTextField();
+		return new UserRegistrationPage(driver, log);
+		
+	}
+
+}
