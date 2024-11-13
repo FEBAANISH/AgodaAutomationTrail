@@ -1,1 +1,6 @@
 /target/
+# Ignore Allure results
+allure-results/
+
+# Ignore screenshots
+Screenshots/
