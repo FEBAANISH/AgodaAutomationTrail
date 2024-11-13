@@ -7,15 +7,14 @@
   <test thread-count="5" name="first(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="TestPackage.createAccountTest">
+      <class name="TestPackage.DestinationTest">
         <methods>
-          <include name="reportFlush"/>
-          <include name="setUpTest"/>
-          <include name="SwitchToFrame"/>
           <include name="NavigateToCreateAccountPage"/>
+          <include name="setUpTest"/>
+          <include name="EnterValueInDestinationTextBox"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- TestPackage.createAccountTest -->
+      </class> <!-- TestPackage.DestinationTest -->
     </classes>
   </test> <!-- first(failed) -->
 </suite> <!-- Failed suite [Suite] -->
