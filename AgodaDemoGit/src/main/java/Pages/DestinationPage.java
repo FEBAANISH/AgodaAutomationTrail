@@ -39,7 +39,7 @@ public class DestinationPage extends BasePage {
 	public String DestinationJsonReader() throws FileNotFoundException, IOException, ParseException {
 		JSONParser jp = new JSONParser();
 		JSONObject obj = (JSONObject) jp.parse(new FileReader(
-				"C:\\Users\\febaz\\OneDrive\\Documents\\GitProject\\AgodaAutomationTrail\\AgodaDemoGit\\src\\test\\java\\TestData\\destination.json"));
+				"C:\\Users\\febaz\\OneDrive\\Documents\\AgodaGIT\\AgodaAutomationTrail\\AgodaDemoGit\\src\\test\\java\\TestData\\destination.json"));
 		JSONArray locationArray = (JSONArray) obj.get("Destination");
 		if (locationArray != null && !locationArray.isEmpty()) {
 			// Get the first element in the array (a JSONObject)
